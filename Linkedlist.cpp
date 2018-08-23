@@ -20,6 +20,9 @@ void Stack::pop() {
 	ListNode* temp = head;
 	head = head->next;
 	delete temp;
+	// Don't forget to set temp=NULL
+	temp=NULL;
+
 }
 void Stack::top() {
 	if (!head) {
@@ -50,6 +53,7 @@ void Queue::pop() {
 	ListNode * temp = head;
 	head = head->next;
 	delete temp;
+	temp=NULL;
 }
 void Queue::front() {
 	if (!head) {
@@ -93,6 +97,8 @@ void Deque::removeFront()   {
 	head = head->next;
 	head->prev = NULL;
 	delete temp;
+	temp=NULL;
+
 }
 void Deque::removeEnd()     {
 	if (!tail) { return; }
@@ -100,6 +106,7 @@ void Deque::removeEnd()     {
 	tail = tail->prev;
 	tail->next = NULL;
 	delete temp;
+	temp=NULL;
 }
 void Deque::pollFront()     {
 	if (!head) {
