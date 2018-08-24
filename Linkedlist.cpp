@@ -21,8 +21,11 @@ void Stack::pop() {
 	head = head->next;
 	delete temp;
 	// Don't forget to set temp=NULL
-	temp=NULL;
-
+	//temp=NULL;
+	//temp=NULL is delete operation done internally,
+	// it set the pointer to NULL in the last step
+	//but be carefull, if using malloc, realloc with free method, have to make sure 
+	// the pointer is set to NULL, otherwise-> bad pointer 
 }
 void Stack::top() {
 	if (!head) {
@@ -53,7 +56,7 @@ void Queue::pop() {
 	ListNode * temp = head;
 	head = head->next;
 	delete temp;
-	temp=NULL;
+	//temp=NULL;
 }
 void Queue::front() {
 	if (!head) {
@@ -97,7 +100,7 @@ void Deque::removeFront()   {
 	head = head->next;
 	head->prev = NULL;
 	delete temp;
-	temp=NULL;
+	//temp=NULL;
 
 }
 void Deque::removeEnd()     {
@@ -106,7 +109,7 @@ void Deque::removeEnd()     {
 	tail = tail->prev;
 	tail->next = NULL;
 	delete temp;
-	temp=NULL;
+	//temp=NULL;
 }
 void Deque::pollFront()     {
 	if (!head) {
