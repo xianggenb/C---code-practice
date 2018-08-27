@@ -1,5 +1,5 @@
+#include "stdafx.h"
 #include "Bst.h"
-
 BST::BST()
 {
 	this->root = NULL;
